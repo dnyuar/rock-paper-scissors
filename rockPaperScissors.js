@@ -16,8 +16,9 @@ Returns a string of who won the round (e.g You won, rock beats scissors)
 */
 
 function getComputerChoice() {
-    const choice = ["ROCK", "PAPER", "SCISSORS"]
+    const choice = ["ROCK", "PAPER", "SCISSORS"];
 
-    const randomVariable = Math.floor(Math.random() * choice.length)
-    console.log(choice[randomVariable])
+    const randomVariable = Math.floor(Math.random() * choice.length);
+    console.log(choice[randomVariable]);
+    return choice[randomVariable];
 }
