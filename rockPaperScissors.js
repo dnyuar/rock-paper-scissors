@@ -18,8 +18,7 @@ Returns a string of who won the round (e.g You won, rock beats scissors)
 function getComputerChoice() {
     const choice = ["ROCK", "PAPER", "SCISSORS"];
 
-    const randomVariable = Math.floor(Math.random() * choice.length);
-    console.log(choice[randomVariable]);
+    let randomVariable = Math.floor(Math.random() * choice.length);
     return choice[randomVariable];
 }
 
@@ -33,39 +32,68 @@ Plan
 - return the result of the comparison (console log first before returning)
 */
 
-const playerSelection = "Rock".toUpperCase();
-const computerSelection = getComputerChoice();
-console.log(playerSelection);
+const playerSelection = "paper".toUpperCase();
+let computerSelection = getComputerChoice();   // The function is called once and the variable is set and doesnt change
+
+// NOTE: You CAN'T redeclare variables with 'let'. Once they are set that's it
+
+
+function test() {
+   console.log(computerSelection);
+}
 
 function playRound(playerSelection, computerSelection) {
     if(computerSelection === "ROCK"){
         rockChoice(playerSelection);
-
+        return;
     } else if (computerSelection === "PAPER") {
         paperChoice(playerSelection);
+        return;
     } else {
         scissorsChoice(playerSelection);
-
+        return;
     }
 }
 
 function rockChoice(playerSelection) {
     // rock beats scissors, rock draws with rock, rock loses to paper
-    if (playerSelection === "ROCK") {
+    if (playerSelection == "ROCK") {
         console.log("It's a draw!");
-    } else if (playerSelection === "PAPER") {
+        return;
+    } else if (playerSelection == "PAPER") {
         console.log("You Win! Paper beats rock");
+        return;
     } else {
         console.log("You Lose! Scissors loses to rock");
+        return;
     }
 }
 
 function paperChoice(playerSelection) {
     // paper beats rock, paper draws with paper, paper loses to scissors
+    if (playerSelection === "PAPER") {
+        console.log("It's a draw!");
+        return;
+    } else if (playerSelection === "ROCK") {
+        console.log("You Lose! Paper beats rock");
+        return;
+    } else {
+        console.log("You Win! Scissors beats paper");
+        return;
+    }
 
 }
 
 function scissorsChoice(playerSelection) {
     // scissors beats paper, scissors draws with scissors, scissors loses to rock
-
+    if (playerSelection === "PAPER") {
+        console.log("You Lose! Scissors beats paper");
+        return;
+    } else if (playerSelection === "ROCK") {
+        console.log("You Win! Rock beats scissors");
+        return;
+    } else {
+        console.log("It's a draw!");
+        return;
+    }
 }
