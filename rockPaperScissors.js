@@ -43,6 +43,18 @@ function playRound(playerSelection, computerSelection) {
     } else if (computerSelection === "PAPER") {
 
     } else {
-        
+
     }
+}
+
+function rockChoice(playerSelection) {
+
+}
+
+function paperChoice(playerSelection) {
+
+}
+
+function scissorsChoice(playerSelection) {
+
 }
