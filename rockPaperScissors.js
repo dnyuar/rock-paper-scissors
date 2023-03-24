@@ -39,22 +39,33 @@ console.log(playerSelection);
 
 function playRound(playerSelection, computerSelection) {
     if(computerSelection === "ROCK"){
+        rockChoice(playerSelection);
 
     } else if (computerSelection === "PAPER") {
-
+        paperChoice(playerSelection);
     } else {
+        scissorsChoice(playerSelection);
 
     }
 }
 
 function rockChoice(playerSelection) {
-
+    // rock beats scissors, rock draws with rock, rock loses to paper
+    if (playerSelection === "ROCK") {
+        console.log("It's a draw!");
+    } else if (playerSelection === "PAPER") {
+        console.log("You Win! Paper beats rock");
+    } else {
+        console.log("You Lose! Scissors loses to rock");
+    }
 }
 
 function paperChoice(playerSelection) {
+    // paper beats rock, paper draws with paper, paper loses to scissors
 
 }
 
 function scissorsChoice(playerSelection) {
+    // scissors beats paper, scissors draws with scissors, scissors loses to rock
 
 }
