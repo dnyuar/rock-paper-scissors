@@ -22,3 +22,27 @@ function getComputerChoice() {
     console.log(choice[randomVariable]);
     return choice[randomVariable];
 }
+
+/*
+Plan
+- create function called ‘playRound’ which takes two parameters
+- create computerSelection parameter which is assigned the ‘getComputerChoice’ function
+- create playerSelection parameter which is assigned ‘Rock’ (will be changed later)
+- create conditional which checks the value of the computer selection
+- compare the value of the computer selection against the player selection
+- return the result of the comparison (console log first before returning)
+*/
+
+const playerSelection = "Rock".toUpperCase();
+const computerSelection = getComputerChoice();
+console.log(playerSelection);
+
+function playRound(playerSelection, computerSelection) {
+    if(computerSelection === "ROCK"){
+
+    } else if (computerSelection === "PAPER") {
+
+    } else {
+        
+    }
+}
