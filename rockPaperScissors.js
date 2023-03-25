@@ -40,13 +40,22 @@ const playerSelection = "rock".toUpperCase();
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     if(computerSelection === "ROCK"){
-       return rockChoice(playerSelection);
+       rockChoice(playerSelection);
+       console.log("Player counter: " + playerCounter);
+       console.log("Computer counter: " + computerCounter);
+       return;
         
     } else if (computerSelection === "PAPER") {
-        return paperChoice(playerSelection);
+        paperChoice(playerSelection);
+        console.log("Player counter: " + playerCounter);
+        console.log("Computer counter: " + computerCounter);
+        return;
 
     } else {
-        return scissorsChoice(playerSelection);
+        scissorsChoice(playerSelection);
+        console.log("Player counter: " + playerCounter);
+        console.log("Computer counter: " + computerCounter);
+        return;
 
     }
 }
@@ -60,10 +69,10 @@ Game function should then return the winner of the game
 The ‘playRound’ function should now take input from the user instead of it being set in the code.
 Need to ask the user for the input for the function
 
-- create new function ‘game’
-- create variables for both the player and computer which will count who has won each round (outside of game function)
-- update choice functions to increase either player or computer count by 1 depending on who won the game
-- asks the user for an input of rock, paper or scissors
+- create new function ‘game’ - DONE
+- create variables for both the player and computer which will count who has won each round (outside of game function) - DONE
+- update choice functions to increase either player or computer count by 1 depending on who won the game - DONE
+- asks the user for an input of rock, paper or scissors - DONE
 - set that to upper case for what they typed in (can add validation later)
 - Add in the playRound function into the game function
 - pass that variable as the playerSelection
@@ -72,6 +81,14 @@ Need to ask the user for the input for the function
 - at the end of the game return the winner of the game or if it is a draw by checking the player and computer counters
 */
 
+let playerCounter = 0;
+let computerCounter = 0;
+
+function game() {
+    let input = prompt("Rock, Paper or Scissors?").toUpperCase();
+    console.log(input);
+}
+
 function rockChoice(playerSelection) {
     // rock beats scissors, rock draws with rock, rock loses to paper
     if (playerSelection == "ROCK") {
@@ -79,9 +96,11 @@ function rockChoice(playerSelection) {
         return;
     } else if (playerSelection == "PAPER") {
         console.log("You Win! Paper beats rock");
+        playerCounter++;
         return;
     } else {
         console.log("You Lose! Scissors loses to rock");
+        computerCounter++;
         return;
     }
 }
@@ -93,9 +112,11 @@ function paperChoice(playerSelection) {
         return;
     } else if (playerSelection === "ROCK") {
         console.log("You Lose! Paper beats rock");
+        computerCounter++;
         return;
     } else {
         console.log("You Win! Scissors beats paper");
+        playerCounter++;
         return;
     }
 
@@ -105,9 +126,11 @@ function scissorsChoice(playerSelection) {
     // scissors beats paper, scissors draws with scissors, scissors loses to rock
     if (playerSelection === "PAPER") {
         console.log("You Lose! Scissors beats paper");
+        computerCounter++;
         return;
     } else if (playerSelection === "ROCK") {
         console.log("You Win! Rock beats scissors");
+        playerCounter++;
         return;
     } else {
         console.log("It's a draw!");
