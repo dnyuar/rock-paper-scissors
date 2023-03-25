@@ -36,6 +36,7 @@ const playerSelection = "rock".toUpperCase();
 // let computerSelection = getComputerChoice();   // The function is called once and the variable is set and doesnt change
 
 // NOTE: You CAN'T redeclare variables with 'let'. Once they are set that's it
+// You can reassign a 'let' and 'var' variable however
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     if(computerSelection === "ROCK"){
@@ -49,6 +50,27 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 
     }
 }
+
+/*
+Create a new function called ‘game’
+The ‘playRound’ function is called 5 times inside the game function
+‘Game’ function keeps score of each round played and who won
+Game function should then return the winner of the game
+
+The ‘playRound’ function should now take input from the user instead of it being set in the code.
+Need to ask the user for the input for the function
+
+- create new function ‘game’
+- create variables for both the player and computer which will count who has won each round (outside of game function)
+- update choice functions to increase either player or computer count by 1 depending on who won the game
+- asks the user for an input of rock, paper or scissors
+- set that to upper case for what they typed in (can add validation later)
+- Add in the playRound function into the game function
+- pass that variable as the playerSelection
+- create a loop that calls the playRound function 5 times
+- after each loop, update a counter for the player or computer
+- at the end of the game return the winner of the game or if it is a draw by checking the player and computer counters
+*/
 
 function rockChoice(playerSelection) {
     // rock beats scissors, rock draws with rock, rock loses to paper
