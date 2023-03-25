@@ -32,26 +32,21 @@ Plan
 - return the result of the comparison (console log first before returning)
 */
 
-const playerSelection = "paper".toUpperCase();
-let computerSelection = getComputerChoice();   // The function is called once and the variable is set and doesnt change
+const playerSelection = "rock".toUpperCase();
+// let computerSelection = getComputerChoice();   // The function is called once and the variable is set and doesnt change
 
 // NOTE: You CAN'T redeclare variables with 'let'. Once they are set that's it
 
-
-function test() {
-   console.log(computerSelection);
-}
-
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection = getComputerChoice()) {
     if(computerSelection === "ROCK"){
-        rockChoice(playerSelection);
-        return;
+       return rockChoice(playerSelection);
+        
     } else if (computerSelection === "PAPER") {
-        paperChoice(playerSelection);
-        return;
+        return paperChoice(playerSelection);
+
     } else {
-        scissorsChoice(playerSelection);
-        return;
+        return scissorsChoice(playerSelection);
+
     }
 }
 
