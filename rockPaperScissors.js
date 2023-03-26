@@ -40,24 +40,24 @@ const playerSelection = "rock".toUpperCase();
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     if(computerSelection === "ROCK"){
-       rockChoice(playerSelection);
+       return rockChoice(playerSelection);
        console.log("Player counter: " + playerCounter);
        console.log("Computer counter: " + computerCounter);
-       return;
+
         
     } else if (computerSelection === "PAPER") {
-        paperChoice(playerSelection);
+        return paperChoice(playerSelection);
         console.log("Player counter: " + playerCounter);
         console.log("Computer counter: " + computerCounter);
         return;
 
     } else {
-        scissorsChoice(playerSelection);
+        return scissorsChoice(playerSelection);
         console.log("Player counter: " + playerCounter);
         console.log("Computer counter: " + computerCounter);
         return;
 
-    }
+    };
 }
 
 /*
@@ -73,8 +73,8 @@ Need to ask the user for the input for the function
 - create variables for both the player and computer which will count who has won each round (outside of game function) - DONE
 - update choice functions to increase either player or computer count by 1 depending on who won the game - DONE
 - asks the user for an input of rock, paper or scissors - DONE
-- set that to upper case for what they typed in (can add validation later)
-- Add in the playRound function into the game function
+- set that to upper case for what they typed in (can add validation later) - DONE
+- Add in the playRound function into the game function - 
 - pass that variable as the playerSelection
 - create a loop that calls the playRound function 5 times
 - after each loop, update a counter for the player or computer
@@ -87,6 +87,7 @@ let computerCounter = 0;
 function game() {
     let input = prompt("Rock, Paper or Scissors?").toUpperCase();
     console.log(input);
+    return playRound(input);
 }
 
 function rockChoice(playerSelection) {
@@ -94,6 +95,7 @@ function rockChoice(playerSelection) {
     if (playerSelection == "ROCK") {
         console.log("It's a draw!");
         return;
+
     } else if (playerSelection == "PAPER") {
         console.log("You Win! Paper beats rock");
         playerCounter++;
