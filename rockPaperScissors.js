@@ -74,8 +74,8 @@ Need to ask the user for the input for the function
 - update choice functions to increase either player or computer count by 1 depending on who won the game - DONE
 - asks the user for an input of rock, paper or scissors - DONE
 - set that to upper case for what they typed in (can add validation later) - DONE
-- Add in the playRound function into the game function - 
-- pass that variable as the playerSelection
+- Add in the playRound function into the game function - DONE
+- pass that variable as the playerSelection - DONE
 - create a loop that calls the playRound function 5 times
 - after each loop, update a counter for the player or computer
 - at the end of the game return the winner of the game or if it is a draw by checking the player and computer counters
@@ -85,9 +85,20 @@ let playerCounter = 0;
 let computerCounter = 0;
 
 function game() {
-    let input = prompt("Rock, Paper or Scissors?").toUpperCase();
-    console.log(input);
-    return playRound(input);
+    for (let i = 0; i < 5; i++) {
+        let input = prompt("Rock, Paper or Scissors?").toUpperCase();
+        console.log(input);
+        playRound(input);
+    }
+       return 0;
+}
+
+function test() {
+    for (let i = 0; i < 5; i ++)
+    {
+        console.log(i);
+    }
+    return;
 }
 
 function rockChoice(playerSelection) {
