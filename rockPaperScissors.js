@@ -28,13 +28,12 @@ function resetCounter() {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
         let input = prompt("Rock, Paper or Scissors?").toUpperCase();
         console.log(input);
         playRound(input);
         console.log("Player wins: " + playerCounter);
         console.log("Computer wins: " + computerCounter);
-    }
+
     if (playerCounter > computerCounter) {
         console.log("Congrats! You won!");
     } else if (playerCounter < computerCounter) {
