@@ -28,9 +28,10 @@ function resetCounter() {
 }
 
 function game() {
-        let input = prompt("Rock, Paper or Scissors?").toUpperCase();
-        console.log(input);
-        playRound(input);
+        // let input = prompt("Rock, Paper or Scissors?").toUpperCase();
+        // console.log(input);
+        // playRound(input);
+        console.log("Click a button");
         console.log("Player wins: " + playerCounter);
         console.log("Computer wins: " + computerCounter);
 
@@ -94,3 +95,25 @@ function scissorsChoice(playerSelection) {
         return;
     }
 }
+
+const rockButton = document.getElementById("rock");
+rockButton.addEventListener("click", function() {
+    playRound("ROCK");
+    console.log("You clicked rock");
+});
+
+const paperButton = document.getElementById("paper");
+paperButton.addEventListener("click", function() {
+    playRound("PAPER");
+    console.log("You clicked paper");
+});
+
+const scissorsButton = document.getElementById("scissors");
+scissorsButton.addEventListener("click", function() {
+    playRound("SCISSORS");
+    console.log("You clicked scissors");
+});
+
+// create a boolean that is false unless a button is clicked
+// pause the function for a set period of time until a button is clicked?
+// how to wait for user input?
