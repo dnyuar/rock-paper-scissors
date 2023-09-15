@@ -36,11 +36,11 @@ function game() {
         console.log("Computer wins: " + computerCounter);
 
     if (playerCounter > computerCounter) {
-        console.log("Congrats! You won!");
+        document.getElementById("test").innerText = "Congrats! You won!";
     } else if (playerCounter < computerCounter) {
-        console.log("You Lose! The computer won");
+        document.getElementById("test").innerText = "You Lose! The computer won";
     } else {
-        console.log("It's a draw!");
+        document.getElementById("test").innerText = "It's a draw!"
     }
     resetCounter();
        return 0;
@@ -49,15 +49,15 @@ function game() {
 function rockChoice(playerSelection) {
     // rock beats scissors, rock draws with rock, rock loses to paper
     if (playerSelection == "ROCK") {
-        console.log("It's a draw!");
+        document.getElementById("test").innerText = "It's a draw!";
         return;
 
     } else if (playerSelection == "PAPER") {
-        console.log("You Win! Paper beats rock");
+        document.getElementById("test").innerText = "You Win! Paper beats rock";
         playerCounter++;
         return;
     } else {
-        console.log("You Lose! Scissors loses to rock");
+        document.getElementById("test").innerText = "You Lose! Scissors loses to rock";
         computerCounter++;
         return;
     }
@@ -66,14 +66,14 @@ function rockChoice(playerSelection) {
 function paperChoice(playerSelection) {
     // paper beats rock, paper draws with paper, paper loses to scissors
     if (playerSelection === "PAPER") {
-        console.log("It's a draw!");
+        document.getElementById("test").innerText = "It's a draw!";
         return;
     } else if (playerSelection === "ROCK") {
-        console.log("You Lose! Paper beats rock");
+        document.getElementById("test").innerText = "You Lose! Paper beats rock";
         computerCounter++;
         return;
     } else {
-        console.log("You Win! Scissors beats paper");
+        document.getElementById("test").innerText = "You Win! Scissors beats paper";
         playerCounter++;
         return;
     }
@@ -83,15 +83,15 @@ function paperChoice(playerSelection) {
 function scissorsChoice(playerSelection) {
     // scissors beats paper, scissors draws with scissors, scissors loses to rock
     if (playerSelection === "PAPER") {
-        console.log("You Lose! Scissors beats paper");
+        document.getElementById("test").innerText = "You Lose! Scissors beats paper";
         computerCounter++;
         return;
     } else if (playerSelection === "ROCK") {
-        console.log("You Win! Rock beats scissors");
+        document.getElementById("test").innerText = "You Win! Rock beats scissors";
         playerCounter++;
         return;
     } else {
-        console.log("It's a draw!");
+        document.getElementById("test").innerText = "It's a draw!";
         return;
     }
 }
@@ -99,21 +99,14 @@ function scissorsChoice(playerSelection) {
 const rockButton = document.getElementById("rock");
 rockButton.addEventListener("click", function() {
     playRound("ROCK");
-    console.log("You clicked rock");
 });
 
 const paperButton = document.getElementById("paper");
 paperButton.addEventListener("click", function() {
     playRound("PAPER");
-    console.log("You clicked paper");
 });
 
 const scissorsButton = document.getElementById("scissors");
 scissorsButton.addEventListener("click", function() {
     playRound("SCISSORS");
-    console.log("You clicked scissors");
 });
-
-// create a boolean that is false unless a button is clicked
-// pause the function for a set period of time until a button is clicked?
-// how to wait for user input?
