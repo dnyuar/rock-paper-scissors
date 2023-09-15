@@ -1,7 +1,6 @@
 
 function getComputerChoice() {
     const choice = ["ROCK", "PAPER", "SCISSORS"];
-
     let randomVariable = Math.floor(Math.random() * choice.length);
     return choice[randomVariable];
 }
@@ -21,17 +20,22 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 let playerCounter = 0;
 let computerCounter = 0;
 
+document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter
+document.getElementById("userScore").innerText = "Player wins: " + playerCounter
+
 function resetCounter() {
     // To reset the counter back to 0 at the end of each game
     playerCounter = 0;
     computerCounter = 0;
 }
 
-function game() {
+function game(input) {
         // let input = prompt("Rock, Paper or Scissors?").toUpperCase();
         // console.log(input);
-        // playRound(input);
+        playRound(input);
         console.log("Click a button");
+        document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter;
+        document.getElementById("userScore").innerText = "Player wins: " + playerCounter;
         console.log("Player wins: " + playerCounter);
         console.log("Computer wins: " + computerCounter);
 
@@ -98,15 +102,15 @@ function scissorsChoice(playerSelection) {
 
 const rockButton = document.getElementById("rock");
 rockButton.addEventListener("click", function() {
-    playRound("ROCK");
+    game("ROCK");
 });
 
 const paperButton = document.getElementById("paper");
 paperButton.addEventListener("click", function() {
-    playRound("PAPER");
+    game("PAPER");
 });
 
 const scissorsButton = document.getElementById("scissors");
 scissorsButton.addEventListener("click", function() {
-    playRound("SCISSORS");
+    game("SCISSORS");
 });
