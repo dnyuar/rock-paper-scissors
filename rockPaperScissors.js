@@ -6,8 +6,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
-    if(computerSelection === "ROCK"){
-       return rockChoice(playerSelection);
+    if (computerSelection === "ROCK") {
+        return rockChoice(playerSelection);
 
     } else if (computerSelection === "PAPER") {
         return paperChoice(playerSelection);
@@ -30,24 +30,26 @@ function resetCounter() {
 }
 
 function game(input) {
-        // let input = prompt("Rock, Paper or Scissors?").toUpperCase();
-        // console.log(input);
-        playRound(input);
-        console.log("Click a button");
-        document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter;
-        document.getElementById("userScore").innerText = "Player wins: " + playerCounter;
-        console.log("Player wins: " + playerCounter);
-        console.log("Computer wins: " + computerCounter);
+    // let input = prompt("Rock, Paper or Scissors?").toUpperCase();
+    // console.log(input);
+    playRound(input);
+    console.log("Click a button");
+    document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter;
+    document.getElementById("userScore").innerText = "Player wins: " + playerCounter;
+    console.log("Player wins: " + playerCounter);
+    console.log("Computer wins: " + computerCounter);
 
-    if (playerCounter > computerCounter) {
-        document.getElementById("test").innerText = "Congrats! You won!";
-    } else if (playerCounter < computerCounter) {
-        document.getElementById("test").innerText = "You Lose! The computer won";
-    } else {
-        document.getElementById("test").innerText = "It's a draw!"
-    }
-    resetCounter();
-       return 0;
+    //     if (playerCounter || computerCounter == 5) {
+    //         if (playerCounter > computerCounter) {
+    //             document.getElementById("test").innerText = "Congrats! You won!";
+    //             } else if (playerCounter < computerCounter) {
+    //             document.getElementById("test").innerText = "You Lose! The computer won";
+    //         } else {
+    //         document.getElementById("test").innerText = "It's a draw!"
+    //     }
+    // }
+    // resetCounter();
+    return 0;
 }
 
 function rockChoice(playerSelection) {
@@ -101,16 +103,16 @@ function scissorsChoice(playerSelection) {
 }
 
 const rockButton = document.getElementById("rock");
-rockButton.addEventListener("click", function() {
+rockButton.addEventListener("click", function () {
     game("ROCK");
 });
 
 const paperButton = document.getElementById("paper");
-paperButton.addEventListener("click", function() {
+paperButton.addEventListener("click", function () {
     game("PAPER");
 });
 
 const scissorsButton = document.getElementById("scissors");
-scissorsButton.addEventListener("click", function() {
+scissorsButton.addEventListener("click", function () {
     game("SCISSORS");
 });
