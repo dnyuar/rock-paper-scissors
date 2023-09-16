@@ -29,9 +29,15 @@ function resetCounter() {
     computerCounter = 0;
 }
 
+const resetButton = document.getElementById("reset")
+resetButton.addEventListener("click", function(){
+    resetCounter();
+    document.getElementById("test").innerText = "";
+    document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter;
+    document.getElementById("userScore").innerText = "Player wins: " + playerCounter;
+})
+
 function game(input) {
-    // let input = prompt("Rock, Paper or Scissors?").toUpperCase();
-    // console.log(input);
     playRound(input);
     console.log("Click a button");
     document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter;
@@ -39,17 +45,23 @@ function game(input) {
     console.log("Player wins: " + playerCounter);
     console.log("Computer wins: " + computerCounter);
 
-    //     if (playerCounter || computerCounter == 5) {
-    //         if (playerCounter > computerCounter) {
-    //             document.getElementById("test").innerText = "Congrats! You won!";
-    //             } else if (playerCounter < computerCounter) {
-    //             document.getElementById("test").innerText = "You Lose! The computer won";
-    //         } else {
-    //         document.getElementById("test").innerText = "It's a draw!"
-    //     }
-    // }
-    // resetCounter();
+        if (playerCounter == 5) {
+            result();
+        } else if (computerCounter == 5) {
+            result();
+        }
     return 0;
+}
+
+function result() {
+    if (playerCounter > computerCounter) {
+        document.getElementById("test").innerText = "Congrats! You won!";
+        } else if (playerCounter < computerCounter) {
+        document.getElementById("test").innerText = "You Lose! The computer won";
+    } else {
+    document.getElementById("test").innerText = "It's a draw!"
+}
+return 0;
 }
 
 function rockChoice(playerSelection) {
