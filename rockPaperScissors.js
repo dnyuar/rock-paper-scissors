@@ -38,8 +38,7 @@ resetButton.addEventListener("click", function(){
 })
 
 function game(input) {
-    playRound(input);
-    console.log("Click a button");
+    playRound(input);   
     document.getElementById("computerScore").innerText = "Computer wins: " + computerCounter;
     document.getElementById("userScore").innerText = "Player wins: " + playerCounter;
     console.log("Player wins: " + playerCounter);

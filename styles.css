@@ -2,3 +2,46 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: red;
 }
+
+.para {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons {
+    margin-bottom: 10px;
+}
+
+.scores {
+    margin-bottom: 10px;
+}
+
+.reset {
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.buttonStyle {
+    font-size: 24px;
+    padding: 0px 20px 0 20px;
+}
+
+#test {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.score {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}

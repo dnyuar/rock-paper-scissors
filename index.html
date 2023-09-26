@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Rock, Paper, Scissors</title>
 </head>
+
 <body>
-    <h1>Rock, Paper, Scissors!</h1>
-    <button id="rock" type="button">ROCK</button>
-    <button id="paper" type="button">PAPER</button>
-    <button id="scissors" type="button">SCISSORS</button>
-    <button id="reset" type="button">Reset Counter</button>
 
-    <p>Click a button to play the game</p>
+    <div class="flex-container">
+        <h1>Rock, Paper, Scissors!</h1>
+        <p class="para">Click one of 'ROCK', 'PAPER' or 'SCISSORS' to play the game. The first to 5 is the winner.</p>
 
-    <div id="test">
-        <!--Div to display results from the game-->
-    
+        <div class="buttons">
+            <button id="rock" class="buttonStyle" type="button">ROCK</button>
+            <button id="paper" class="buttonStyle" type="button">PAPER</button>
+            <button id="scissors" class="buttonStyle" type="button">SCISSORS</button>
+        </div>
+
+        <div id="test">
+            <!--Div to display results from the game-->
+
+        </div>
+
+        <div class="scores">
+            <p id="userScore" class="score"></p>
+            <p id="computerScore" class="score"></p>
+        </div>
+
+
+        <div class="reset">
+            <button id="reset" class="buttonStyle" type="button">Reset Counter</button>
+        </div>
     </div>
 
-    <p id="userScore"></p>
-        <p id="computerScore"></p>
     <script src="rockPaperScissors.js"></script>
-    
+
 </body>
+
 </html>
